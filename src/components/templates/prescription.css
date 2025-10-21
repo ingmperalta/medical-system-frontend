@@ -1,0 +1,337 @@
+@page {
+    size: letter;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: white;
+    padding: 20px;
+}
+
+.prescription-container {
+    width: 8.5in;
+    height: 11in;
+    margin: 0 auto;
+    background: white;
+    border: 3px solid #e8b4d1;
+    position: relative;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    border-bottom: 3px solid #e8b4d1;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.medical-symbol {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4755f2 0%, #b2c8ff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.doctor-info {
+    flex: 1;
+}
+
+.doctor-name {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 32px;
+    color: #d946a6;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.specialty {
+    color: #e8b4d1;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-info strong {
+    color: #333;
+}
+
+/* Watermark */
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.03;
+    pointer-events: none;
+    font-size: 200px;
+    color: #e8b4d1;
+    z-index: 0;
+}
+
+/* Rx Symbol */
+.rx-symbol {
+    font-size: 72px;
+    font-weight: bold;
+    color: #d946a6;
+    margin: 20px 0;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+}
+
+/* Content Area */
+.content-area {
+    /* min-height: 450px; */
+    border: 2px solid #f3e8f0;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px 0;
+    background: linear-gradient(to bottom, #ffffff 0%, #fff 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.prescription-lines {
+    margin: 20px 0;
+}
+
+.prescription-line {
+    border-bottom: 1px solid #e8b4d1;
+    min-height: 35px;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Footer Section */
+.footer-section {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.field {
+    background: #fff;
+    border: 2px solid #e8b4d1;
+    border-radius: 8px;
+    padding: 12px 15px;
+    position: relative;
+}
+
+.field-label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #d946a6;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field-value {
+    border-bottom: 1px solid #e8b4d1;
+    min-height: 25px;
+    font-size: 14px;
+    color: #333;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Signature Box */
+.signature-box {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 2px solid #333;
+    padding-top: 10px;
+    max-width: 300px;
+    margin-left: auto;
+}
+
+.signature-label {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Notes Section */
+.notes-section {
+    background: #fff9e6;
+    border: 2px dashed #fbbf24;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.notes-title {
+    color: #d97706;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.notes-content {
+    color: #666;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        padding: 0;
+    }
+    
+    .prescription-container {
+        border: 3px solid #e8b4d1;
+    }
+
+    .boton-imprimir {
+        display: none;
+    }
+
+    .boton-cerrar {
+        display: none;
+    }
+
+    @page {
+        margin: 0;
+    }
+}
+
+/* Decorative elements */
+.corner-decoration {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e8b4d1;
+}
+
+.corner-decoration.top-left {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner-decoration.top-right {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-decoration.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+}
+
+.corner-decoration.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+.date-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    background: white;
+    padding: 10px;
+    border: 2px solid #e8b4d1;
+    border-radius: 5px;
+}
+
+.date-label {
+    font-size: 10px;
+    color: #d946a6;
+    font-weight: bold;
+}
+
+.date-value {
+    font-size: 13px;
+    color: #333;
+    margin-top: 3px;
+}
+
+.boton-imprimir {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boton-imprimir:hover {
+    background-color: #0056b3;
+}
+
+.boton-imprimir:active {
+    background-color: #004085;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.boton-cerrar {
+    background-color: #f00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 5px;
+}
+
+.boton-cerrar:hover {
+    background-color: #f13518;
+}
+
+.boton-cerrar:active {
+    background-color: #8b0f03;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
